@@ -1,6 +1,9 @@
 Activity Log for Geom99 Practical LAb 4 Asnn
 
-Part 1 Total Time 5 Minutes
+Creating a Virtual MAchine and firewall rules
+Importance: High 
+March 2nd 2024
+Duration: 15 Minutes
 1) Log onto google cloud through your gmail account 
 2) Created GCP Project with name "MyFirstProject"
 3) Opened the Compute Engine Console and clicked "Virtual Machine"
@@ -29,13 +32,8 @@ This process allows the google cloud to access the ports for ArcGIS Server Manag
    8) Create a new firewall rule and save it "arcgisserveradmin", same steps as above but set the TCP ports to "6443,6080".  ArcGIS wouldn't usually allow access with port 6080 but the provided virtual machine has been configured to do so for testing purposes
    9) Click Save
 
-
-
   Setting a windows firewall rule to allow ARCGis Server Management Ports 
   
-
- 
-
 1) find the extenral IP number from the GCP compute engine console and click on "copy IP"
 2) only local desktop, click the windows icon on the bottom left hand corner and type in  "remote desktop Connection" and paste the copied IP address with the addition of :444 at the end for specifying the port number
 3) When entering credentials, make sure you can type in for both dialog boxes.  If not then select "More Choices"
@@ -56,7 +54,22 @@ Setting a windows Firewall rule to allow for server management ports
 This firewall rule will persist even after turning off the VM and will have to be recreated every time 
 
 
-Total Time Elapsed, 15 minutes.
+Publishing a Map server onto a GCP
+Date: March 2nd 2024
+Importance: Medium
+Total time: 10 Minutes
+1) Open up the Remote Desktop with the External IP and password
+2) in your remote desktop, place the unzupped canada folder (folder can be found in the repository under "Canada") into the gisworkspace folder in the C drive on the virtual machine.
+3) on your local desktop open up ArcGIS Pro and create a server connection to your server
+4) go to Insert -->new connection-->add server-->New ArcGIS Server
+5) For Server url type in "https://(externalIP):6443/arcgis
+6) ignore the warning about the certificate, we know and trust the source so it shouldn't be an issue
+7) Username is "siteadmin" and the password to the server was on the provided sheet my Shawn Morgan
+8) don't bother saving credentials, the ip address will be changing constantly and
+9) click finish and create server connection
+10) from there add in the canada.shp file (this .shp file MUST be kept in the same folder path as the server, so it must be on your local computer in c/gisworkspace/canada/canada.shp, this is to ensure you aren't copying the data twice and overloading the server)
+11) once the .shp file is on Pro, right click on the server on the right hand side in the catalog box and click on publish-->publish Map service
+12) 
 
 
   
