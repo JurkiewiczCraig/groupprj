@@ -20,12 +20,14 @@ Part 1 Total Time 5 Minutes
    Setting up the FirewallL 5 Minutes
 This process allows the google cloud to access the ports for ArcGIS Server Management
    1)Open Firefall  under VPC Network and Click "Create Firewall Rule"
-   2) Name firewall rule as per instructions "arcgisserveradmin" but for future reference any name would be acceptable
+   2) Name firewall rule as per instructions "flemingrdp444" but for future reference any name would be acceptable
    3) For "Targets" select  all instances in the network
    4)for Source Filter,  select IPV4 ranges
    5) for IP's the most restrictive IP would be preferred (home computer IP) but can also do 0.0.0.0/0 as this is the least restrictive IP Address and will allow for any computer to access.  Best to start with the least restrictive IP Address and switch to a more restricve IP when things are up and running smoothly.
-   6) Set the TCP ports to open 6443 and 6080.  ArcGIS wouldn't usually allow access with port 6080 but the provided virtual machine has been configured to do so for testing purposes
+   6) set the TCP port to "444"
    7) Click Save
+   8) Create a new firewall rule and save it "arcgisserveradmin", same steps as above but set the TCP ports to "6443,6080".  ArcGIS wouldn't usually allow access with port 6080 but the provided virtual machine has been configured to do so for testing purposes
+   9) Click Save
   
 
 Interacting with the virutal Desktop
@@ -35,9 +37,9 @@ Interacting with the virutal Desktop
 3) When entering credentials, make sure you can type in for both dialog boxes.  If not then select "More Choices"
 4) for username type in "Student" and for password paste in the password for the virtual machine and click "ok"
 5) if the pop up "the identity of the remote computer cannot be verified.  Do you want to continue anyway? "  Click yes, as we know the identity and it can be trusted.
+6) ensure to shut down the VM machine by clicking "stop Virtual machine" in the console.  If you forget this step, the machine will continue to run and you will continue to be charged.
 
-6) Shut down VM when done
-
+Total Time Elapsed, 15 minutes.
 
 
   
