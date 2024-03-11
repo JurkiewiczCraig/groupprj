@@ -28,9 +28,13 @@ This process allows the google cloud to access the ports for ArcGIS Server Manag
    7) Click Save
    8) Create a new firewall rule and save it "arcgisserveradmin", same steps as above but set the TCP ports to "6443,6080".  ArcGIS wouldn't usually allow access with port 6080 but the provided virtual machine has been configured to do so for testing purposes
    9) Click Save
+
+
+
+  Setting a windows firewall rule to allow ARCGis Server Management Ports 
   
 
-Interacting with the virutal Desktop
+ 
 
 1) find the extenral IP number from the GCP compute engine console and click on "copy IP"
 2) only local desktop, click the windows icon on the bottom left hand corner and type in  "remote desktop Connection" and paste the copied IP address with the addition of :444 at the end for specifying the port number
@@ -38,6 +42,19 @@ Interacting with the virutal Desktop
 4) for username type in "Student" and for password paste in the password for the virtual machine and click "ok"
 5) if the pop up "the identity of the remote computer cannot be verified.  Do you want to continue anyway? "  Click yes, as we know the identity and it can be trusted.
 6) ensure to shut down the VM machine by clicking "stop Virtual machine" in the console.  If you forget this step, the machine will continue to run and you will continue to be charged.
+
+7) 
+
+Setting a windows Firewall rule to allow for server management ports
+1) once in your virtual machine, click start and type in "windows defender firewall with advanced seccurity"
+2) on the left hand side, click "inbound rules"  and select "new rule"
+3) when the new rule box opens, click "port"  for rule type and click next
+4) click  "TCP" and apply to to specific ports,  type in "6443,6080"
+5) the default "allow all connections" will be fine for this project
+6) name the rule ArcGIS Server Admin Ports" and click finish
+
+This firewall rule will persist even after turning off the VM and will have to be recreated every time 
+
 
 Total Time Elapsed, 15 minutes.
 
