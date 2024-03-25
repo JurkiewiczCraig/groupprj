@@ -19,10 +19,12 @@
 
 10) created and saved copies of the maps that Tyler worked on and edited them to follow suit with the style of maps that I had created so there was a bit more cohesion between them all
 
-11)Created another "Chapter" of other relationships to be explored wtihin the data, and added in tylers relationships that he had explored
+11)Created another "Chapter" titled "Other Relationships" to be explored wtihin the data, and added in tylers web maps that explored relationships to that section
 
-12) looked into greenhouse gas emissions vs walkability index, added in a button (clicking the + button on the left hand side, is listed under "Basic") so users can jump between Austin and Joplin
+12) Created another web map, looking into greenhouse gas emissions vs walkability index, added in both fields to the web map and under "Styles" clicked on "Relationship" so have the map exporess how these two factors compare in the area. 
 
-13)  Click "+ Add" and click "Swipe" to add in a swipe ability.  Created a web map of Zero Car Households to compare walkability index of Austin texas.  Users can click on the swipe button in the middle of the maps and see how they compare/contrast to each other
+15)  added in a button (clicking the + button on the left hand side, is listed under "Basic") to the slide focusing on Greenhouse Gas Emissions vs walkability index,so users can jump between Austin and Joplin and compare the factors between them.  
+
+16)  Click "+ Add" and click "Swipe" to add in a swipe ability.  Created a web map of Zero Car Households to compare walkability index of Austin texas.  Users can click on the swipe button in the middle of the maps and see how they compare/contrast to each other
    
 
