@@ -1,13 +1,20 @@
 
 # Technical Leg
-1)created web maps in AGOL of several urban cities with dark grey canvas and light blue symbology, showing off the four main factors that affect the Walkability index according the the EPA, , Intersection Density,  Proximity to Transit Stops,  Exmployment Mix and  employment and household income.  
+1) opened up AGOL, loaded "Maps" and added the layer "EPA Walkability Index" ID e09a600e67654f5093f7ece6d8c3feab.  All maps mentioned in the technical log will be based off of this map and data
+2) 
+3) Started creating web maps for the 4 parameters used when calculating the walkability index (Looked at several different urban cities, one for each of the factors) with dark grey canvas and light blue symbology.  The four maps created showed off Intersection Density (D3b),  Proximity to Transit Stops(D4a),Emplyment Mix(D2b_E8MixA ) and  employment and household income(D2a_EpHHm).  
 
 2)After speaking with Tyler Rubini, we decided to follow his outline of following one distinct city for rural factors and another for urban factors Created a copy of Tyler Rubini's Walkability Storymap to add my webmaps on to 
 
-3)Changed the settings on Tyler's copy to allow for navigation, Each HEading1 will now be considered it's own"chapter" to help users move through the storymap
+3) Centered all the previous maps on Austin Texas before adding them to the storymap
+3)Changed the settings on Tyler's copy to allow for navigation, Each Haading1 will now be considered it's own"chapter" to help users move through the storymap a bit easier.
 
 4) created copies of the maps that Tyler worked on and edited them to follow suit with the style of maps that I had created so there was a bit more cohesion between them all
 
-5) Looked into possible correlations/interesting factors to compare and contrast with the data that was provided
+5)Created another "Chapter" of other relationships to be explored wtihin the data, and added in tylers relationships that he had explored
 
-6)added a button so users could move between Austin Texas and Joplin Missouri to see comparisons between the two, as well as a swwipe so users could get side by side comparisons of austin texas for certain factors and criteria
+6) looked into greenhouse gas emissions vs walkability index, added in a button (clicking the + button on the left hand side, is listed under "Basic") so users can jump between Austin and Joplin
+
+7)  Looked into other  possible correlations/interesting factors to compare and contrast with the data that was provided.  Added a swipe function to the storymap for zero car households and walkability index of austin texas for users to gain side by side comparison of how they compare.
+
+
