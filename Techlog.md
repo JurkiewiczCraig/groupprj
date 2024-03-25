@@ -1,5 +1,5 @@
 
-# Activity Leg
+# Technical Leg
 1)created web maps in AGOL of several urban cities with dark grey canvas and light blue symbology, showing off the four main factors that affect the Walkability index according the the EPA, , Intersection Density,  Proximity to Transit Stops,  Exmployment Mix and  employment and household income.  
 
 2)After speaking with Tyler Rubini, we decided to follow his outline of following one distinct city for rural factors and another for urban factors Created a copy of Tyler Rubini's Walkability Storymap to add my webmaps on to 
