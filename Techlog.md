@@ -1,12 +1,13 @@
 
 # Technical Leg for Group Project, Week 11
-1) Started up ArcGIS Pro and added in data from the map through the ArcGIS online Portal onto the map.
+1) Started up ArcGIS Pro and added in map from the EPA Walkability Index through the ArcGIS online Portal.
 
 2) Started clipping the data to focus on several urban cities, santa clarita, Austin texas and San Francisco to narrow in on for our study.  Highlighted several small cities individually then ran the "clip" geoprocessing tool.
-3) From the  "Share" Ribbon, click on "Publish as Web Layer", from there add in the names of each of the cities, publish type of a feature layer and choose the location as "GEOM99GRPPRJ" to uplaod the data onto 
+3) From the  "Share" Ribbon, click on "Publish as Web Layer", from there add in the names of each of the cities, publish type of a feature layer and choose the location as "GEOM99GrpPrg" to uplaod the data onto 
+
 4) Open up maps in AGOL and add in the clipped layers (at this point the layers were not loading, switched gears into working in AGOL only from here)
 
-5) opened up AGOL, loaded "Maps" and added the layer "EPA Walkability Index" ID e09a600e67654f5093f7ece6d8c3feab.  All maps mentioned in the technical log will be based off of this map and data
+5) opened up AGOL, loaded "Maps" and added the layer "EPA Walkability Index" ID e09a600e67654f5093f7ece6d8c3feab.  All maps mentioned in the technical log will be based off of this map.  All Web maps and Storymaps being saved will also be shared directly to the "GEOM99GrpPrg" group for group members to look into and assess.
    
 6) Started creating web maps for the 4 parameters used when calculating the walkability index (Looked at several different urban cities, one for each of the factors) with dark grey canvas and light blue symbology.  The four maps created showed off Intersection Density (D3b),  Proximity to Transit Stops(D4a),Emplyment Mix(D2b_E8MixA ) and  employment and household income(D2a_EpHHm).  
 
@@ -14,9 +15,9 @@
 
 8) Centered all the previous maps on Austin Texas before adding them to the storymap
 
-9)Changed the settings on Tyler's copy to allow for navigation, Each Haading1 will now be considered it's own"chapter" to help users move through the storymap a bit easier.
+9)Changed the settings on Tyler's copy to allow for navigation,  On the top of the page on the right hand side click "Design" and check the "Navigation" setting.  Each "Haading1" on the storyboard  will now be considered it's own "chapter" to help users move through the storymap a bit easier.
 
-10) created copies of the maps that Tyler worked on and edited them to follow suit with the style of maps that I had created so there was a bit more cohesion between them all
+10) created and saved copies of the maps that Tyler worked on and edited them to follow suit with the style of maps that I had created so there was a bit more cohesion between them all
 
 11)Created another "Chapter" of other relationships to be explored wtihin the data, and added in tylers relationships that he had explored
 
