@@ -24,11 +24,17 @@
  
 
 <script>
-var map = L.map('map').setView([30.254280978821917, -97.74781833181494], 13);
- L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const map = L.map('map'); 
+// Initializes map
+
+map.setView([30.26021202884997, -97.78146396208476], 13); 
+// Sets initial coordinates and zoom level
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/relation/113314</a>'
-}).addTo(map);
+    attribution: '© OpenStreetMap'
+}).addTo(map); 
+// Sets map data source and associates with map
 
 let marker, circle, zoomed;
 
