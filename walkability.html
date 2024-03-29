@@ -34,7 +34,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-
   
+/* adding the navigator geolocator that calls the funciton everytime the users location updates*/
+  navigator.geolocation.watchPosition(success, error, options);
+ /*funciton to run when the map gets the users location successfully*/
+  function success(pos) {
+
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy; // Accuracy in metres
+
+}
 </body>
 </html>
