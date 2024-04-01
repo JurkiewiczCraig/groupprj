@@ -34,7 +34,15 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+  
+const options = {
+    enableHighAccuracy: true, 
+   
+    timeout: 5000, 
 
+    maximumAge: 2000, 
+    
+};
 let marker, circle, zoomed;
   
 <!-- adding the navigator geolocator that calls the funciton everytime the users location updates-->
