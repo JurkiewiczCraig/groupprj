@@ -26,13 +26,14 @@ html, body, #map {
 <div id="map"></div>
   
 <script>
-var esri = L.esri.featureLayer({
-           url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer",
-           style: function () {
-             return { color: "#70ca49", weight: 2 };
-           }
-         }).addTo(map);
-  
+
+ 
+ 
+  var map = L.map(mapDiv, mapOptions);
+
+var wmsLayer = L.tileLayer.wms('https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0', {
+    layers: 'NationalWalkabilityIndex'
+}).addTo(map);
  
 
 
