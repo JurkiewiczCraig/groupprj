@@ -47,7 +47,7 @@ let marker, circle, zoomed;
   
 <!-- adding the navigator geolocator that calls the function everytime the users location updates-->
   navigator.geolocation.watchPosition(success, error, options);
- <!function to run when the map gets the users location successfully-->
+ <!-- function to run when the map gets the users location successfully-->
   function success(pos) {
 
     const lat = pos.coords.latitude;
