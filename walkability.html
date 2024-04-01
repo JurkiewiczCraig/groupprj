@@ -29,7 +29,7 @@ html, body, #map {
 
  
  
-  var map = L.map(mapDiv, mapOptions);
+  var map = L.map(map, mapOptions);
 
 var wmsLayer = L.tileLayer.wms('https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0', {
     layers: 'NationalWalkabilityIndex'
