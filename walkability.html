@@ -12,7 +12,7 @@
       width: 100%;
     }
   </style>
-  <!-- links to the css and java code--> 
+  <!-- links to the css and java code --> 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -29,7 +29,7 @@
 var map = L.map('map').setView([51.505, -0.09], 13);
 </script>
   
-/*specifying where we are getting our map source from */
+<!-- specifying where we are getting our map source from -->
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -46,7 +46,7 @@ let marker, circle, zoomed;
     const lng = pos.coords.longitude;
     const accuracy = pos.coords.accuracy; // Accuracy in metres
 <!-- adding in marker and circle for users location to be shown on the map -->
-<!--adding in an if statement to delete any old markers that may exist -->
+<!-- adding in an if statement to delete any old markers that may exist -->
   if (marker) {
         map.removeLayer(marker);
         map.removeLayer(circle);
@@ -55,7 +55,7 @@ let marker, circle, zoomed;
   marker = L.marker([lat, lng]).addTo(map);
   circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
   
- <!--(adding in an if statement to have the circle update in tandem with map zoom level -->
+ <!-- adding in an if statement to have the circle update in tandem with map zoom level -->
   if (!zoomed) {
         zoomed = map.fitBounds(circle.getBounds()); 
     }
