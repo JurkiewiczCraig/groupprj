@@ -24,7 +24,7 @@
 <script>
    
 var map = L.map('map').setView([51.505, -0.09], 13);
-</script>
+ 
  
 
  
@@ -45,9 +45,9 @@ const options = {
 };
 let marker, circle, zoomed;
   
-<!-- adding the navigator geolocator that calls the funciton everytime the users location updates-->
+<!-- adding the navigator geolocator that calls the function everytime the users location updates-->
   navigator.geolocation.watchPosition(success, error, options);
- <!--funciton to run when the map gets the users location successfully-->
+ <!function to run when the map gets the users location successfully-->
   function success(pos) {
 
     const lat = pos.coords.latitude;
@@ -84,6 +84,6 @@ function error(err) {
     } else {
         alert("Cannot get current location");
     }
-  
+  </script>
 </body>
 </html>
