@@ -12,20 +12,20 @@
       width: 100%;
     }
   </style>
-  // links to the css and java code
+  <!-- links to the css and java code--> 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
 </head>
 <body>
-/* creating a div to hold the map element */
+<!-- creating a div to hold the map element -->
 <div id="map"></div>
 
  
 
 <script>
-  /* importing the library and specifying where the map shoudl go along with the lat, long and zoom level */
+  <!-- importing the library and specifying where the map shoudl go along with the lat, long and zoom level -->
 var map = L.map('map').setView([51.505, -0.09], 13);
 </script>
   
@@ -37,16 +37,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 let marker, circle, zoomed;
   
-/* adding the navigator geolocator that calls the funciton everytime the users location updates*/
+<!-- adding the navigator geolocator that calls the funciton everytime the users location updates-->
   navigator.geolocation.watchPosition(success, error, options);
- /*funciton to run when the map gets the users location successfully*/
+ <!--funciton to run when the map gets the users location successfully-->
   function success(pos) {
 
     const lat = pos.coords.latitude;
     const lng = pos.coords.longitude;
     const accuracy = pos.coords.accuracy; // Accuracy in metres
-/* adding in marker and circle for users location to be shown on the map */ 
-/*adding in an if statement to delete any old markers that may exist */
+<!-- adding in marker and circle for users location to be shown on the map -->
+<!--adding in an if statement to delete any old markers that may exist -->
   if (marker) {
         map.removeLayer(marker);
         map.removeLayer(circle);
@@ -55,22 +55,22 @@ let marker, circle, zoomed;
   marker = L.marker([lat, lng]).addTo(map);
   circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
   
- /(adding in an if statement to have the circle update in tandem with map zoom level */
+ <!--(adding in an if statement to have the circle update in tandem with map zoom level -->
   if (!zoomed) {
         zoomed = map.fitBounds(circle.getBounds()); 
     }
-  /*keeping the map at the same zoom level whenever the map location changes */
+  <!-- keeping the map at the same zoom level whenever the map location changes -->
 if (!zoomed) {
         zoomed = map.fitBounds(circle.getBounds()); 
     }
-  /*setting the map focus to update with the users position */
+  <!--setting the map focus to update with the users position -->
    map.setView([lat, lng]);
     
 
 }
 }
 function error(err) {
-/* altering the user if they do not allow geolocatoion access or if there is a user error */
+<!-- altering the user if they do not allow geolocatoion access or if there is a user error -->
     if (err.code === 1) {
         alert("Please allow geolocation access");
     } else {
