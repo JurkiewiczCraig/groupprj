@@ -57,6 +57,63 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+
+
+
+
+  
+const options = {
+    enableHighAccuracy: true, 
+   
+    timeout: 5000, 
+
+    maximumAge: 2000, 
+    
+};
+let marker, circle, zoomed;
+  
+<!-- adding the navigator geolocator that calls the function everytime the users location updates-->
+  navigator.geolocation.watchPosition(success, error, options);
+ <!-- function to run when the map gets the users location successfully-->
+  function success(pos) {
+
+    const lat = pos.coords.latitude;
+    const lng = pos.coords.longitude;
+    const accuracy = pos.coords.accuracy; 
+<!-- adding in marker and circle for users location to be shown on the map -->
+<!-- adding in an if statement to delete any old markers that may exist -->
+  if (marker) {
+        map.removeLayer(marker);
+        map.removeLayer(circle);
+    }  
+  
+  marker = L.marker([lat, lng]).addTo(map);
+  circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
+  
+ <!-- adding in an if statement to have the circle update in tandem with map zoom level -->
+  if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds()); 
+    }
+  <!-- keeping the map at the same zoom level whenever the map location changes -->
+if (!zoomed) {
+        zoomed = map.fitBounds(circle.getBounds()); 
+    }
+  <!--setting the map focus to update with the users position -->
+   map.setView([lat, lng]);
+    
+
+}
+
+function error(err) {
+<!-- altering the user if they do not allow geolocatoion access or if there is a user error -->
+    if (err.code === 1) {
+        alert("Please allow geolocation access");
+    } else {
+        alert("Cannot get current location");
+    }
+}
+
+      
     </script>
   </body>
 </html>
