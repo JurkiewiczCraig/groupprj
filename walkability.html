@@ -31,9 +31,13 @@ html, body, #map {
  
 var map = L.map('map').setView([51.505, -0.09], 13);
  
-var wmsLayer = L.tileLayer.wms('https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer', {
-    layers: 'TNationalWalkabilityIndex'
+var featureLayer = L.esri.featureLayer({
+  url: 'https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0',
 }).addTo(map);
+
+  
+};
+
  
 
   
