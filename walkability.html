@@ -38,18 +38,19 @@
       const apiKey = "AAPKd2afabf5529b4430b572e8a39b35179a4tZQifqbvfxGtbZYrWuNiu-7WJ_RBsG8evFEueBzhJNwShf8bT9r3MPKINuFc60V";
       const basemapEnum = "arcgis/streets";
 
-      const map = L.map("map", {
-        minZoom: 2
-      }).setView([34.02, -118.805], 13);
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
 L.esri.Vector.vectorBasemapLayer(basemapEnum, {
         apiKey: "AAPKd2afabf5529b4430b572e8a39b35179a4tZQifqbvfxGtbZYrWuNiu-7WJ_RBsG8evFEueBzhJNwShf8bT9r3MPKINuFc60V"
       }).addTo(map);
 
-      var trailheads = L.esri
+      var index = L.esri
         .featureLayer({
           url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0"
         });
- trailheads.addTo(map);
+ index.addTo(map);
        </script>
   </body>
 </html>
