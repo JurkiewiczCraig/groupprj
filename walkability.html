@@ -47,12 +47,13 @@
       }).addTo(map);
 
 
-      var walkindex = L.esri
-        .featureLayer({
-          url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0"
-        });
+    async function addGeoJson() {
+    const response = await fetch("walkdatay.geojson");
+    const data = await response.json();
+    L.geoJson(data).addTo(map);
+}
 
-      walkindex.addTo(map);
+addGeoJson();
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
