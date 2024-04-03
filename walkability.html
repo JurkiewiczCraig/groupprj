@@ -48,7 +48,7 @@
 
 
     async function addGeoJson() {
-    const response = await fetch("/walkdatay.geojson");
+    const response = await fetch("walkdatay.geojson");
     const data = await response.json();
     L.geoJson(data).addTo(map);
 }
