@@ -54,9 +54,12 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
- 
+   var walklayer = L.esri
+        .featureLayer({
+          url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0"
+        });
 
-
+      walklayer.addTo(map);
   
 const options = {
     enableHighAccuracy: true, 
@@ -124,12 +127,7 @@ L.choropleth(walkdata, {
 }).addTo(map)
 
 
-   var walklayer = L.esri
-        .featureLayer({
-          url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0"
-        });
-
-      walklayer.addTo(map);
+  
 
 
 
