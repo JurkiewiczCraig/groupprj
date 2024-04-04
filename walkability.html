@@ -110,14 +110,16 @@ function error(err) {
 }
 L.choropleth(walkdata, {
 	valueProperty: 'NatWalkInd', // which property in the features to use
-	scale: ['white', 'green'], // chroma.js scale - include as many as you like
-	steps: 4, // number of breaks or steps in range
+	scale: ['white', 'red'], // chroma.js scale - include as many as you like
+	steps: 5, // number of breaks or steps in range
 	mode: 'q', // q for quantile, e for equidistant, k for k-means
 	style: {
-		color: '#13b5a4', // border color
-		weight: 1,
-		 
+		color: '#fff', // border color
+		weight: 2,
+		fillOpacity: 0.8
 	},
+		 
+
 	onEachFeature: function(feature, layer) {
 		layer.bindPopup(feature.properties.NatWalkInd)
 	}
