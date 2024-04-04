@@ -115,8 +115,8 @@ L.choropleth(walkindex, {
 	},
  onEachFeature: function(feature, layer) {
        
-        const natWalkIndString = String(feature.properties.NatWalkInd);
-        layer.bindPopup(natWalkIndString);
+        const natWalkIndString = String(feature.properties.WalkIndex);
+        layer.bindPopup(WalkIndexString);
     }
 }).addTo(map)
 
