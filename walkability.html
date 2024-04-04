@@ -11,7 +11,9 @@
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
     <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
-
+<script src = "walkdata.js"> </script> 
+    <script src = "leaflet-choropleth-gh-pages/leaflet-choropleth-gh-pages/src
+/choropleth.js"> </script>
     <style>
       body {
         margin: 0;
@@ -47,19 +49,26 @@
       }).addTo(map);
 
 
-    async function addGeoJson() {
-    const response = await fetch("walkdatay.geojson");
-    const data = await response.json();
-    L.geoJson(data).addTo(map);
-}
-
-addGeoJson();
+ 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-
+L.choropleth(walkdata, {
+	valueProperty: 'NatWalkInd', // which property in the features to use
+	scale: ['red', 'blue'], // chroma.js scale - include as many as you like
+	steps: 5, // number of breaks or steps in range
+	mode: 'q', // q for quantile, e for equidistant, k for k-means
+	style: {
+		color: '#fff', // border color
+		weight: 2,
+		fillOpacity: 0.8
+	},
+	onEachFeature: function(feature, layer) {
+		layer.bindPopup(feature.properties.NatWalkInd)
+	}
+}).addTo(map)
 
 
   
