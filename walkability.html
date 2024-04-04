@@ -119,11 +119,11 @@ L.choropleth(walkdata, {
 		weight: 2,
 		fillOpacity: 0.8
 	},
-		 
-
-	onEachFeature: function(feature, layer) {
-		layer.bindPopup(feature.properties.NatWalkInd)
-	}
+ onEachFeature: function(feature, layer) {
+       
+        const natWalkIndString = String(feature.properties.NatWalkInd);
+        layer.bindPopup(natWalkIndString);
+    }
 }).addTo(map)
 
 
