@@ -122,7 +122,18 @@ L.choropleth(walkdata, {
 		layer.bindPopup(feature.properties.NatWalkInd)
 	}
 }).addTo(map)
-      
+
+
+   var walklayer = L.esri
+        .featureLayer({
+          url: "https://geodata.epa.gov/arcgis/rest/services/OA/WalkabilityIndex/MapServer/0"
+        });
+
+      walklayer.addTo(map);
+
+
+
+	    
     </script>
   </body>
 </html>
