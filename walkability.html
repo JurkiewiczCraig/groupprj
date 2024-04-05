@@ -15,11 +15,14 @@ and https://github.com/timwis/leaflet-choropleth -->
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
     <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
- <!-- loading the library for the choropleth map along with the javascript file that contains the geojson data -->
+ 
     <script src = "leaflet-choropleth-gh-pages/dist/choropleth.js"></script>
 	  <script src = "walkindex.js"> </script> 
     <style>
-   <!-- adding style to the map and the headers -->
+      body {
+        margin: 0;
+        padding: 0;
+      }
       html, body, #map {
       padding: 0;
       margin: 0;
@@ -29,9 +32,8 @@ and https://github.com/timwis/leaflet-choropleth -->
 	       h1 {text-align: center;
        margin: 0px;
        }
-	        h2 {text-align: center;
+    h2 {text-align: center;
          margin: 0px;}
- 
     </style>
   </head>
 
@@ -108,7 +110,8 @@ function error(err) {
         alert("Cannot get current location");
     }
 }
-	    <!-- adding in the properties for the choropleth map from the variable in the javascript file and the fields listed in the file along with a pop up --> 
+	    <!-- adding in the properties for the choropleth map from the variable in the javascript file
+	    and the fields listed in the file along with a pop up --> 
 L.choropleth(walkindex, {
 	valueProperty: 'WalkIndex', // which property in the features to use
 	scale: ['white', 'green'], // chroma.js scale - include as many as you like
