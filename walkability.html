@@ -1,7 +1,11 @@
+<!-- Maps were inspired by https://www.youtube.com/watch?v=NyjMmNCtKf4&t=5s 
+and https://github.com/timwis/leaflet-choropleth -->
+
 
 <!DOCTYPE html>
 <html>
-  <head>
+
+	<head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    <title>Find Your Block's Walkability Score with Geolocation</title>
 
@@ -13,27 +17,26 @@
     <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
  
     <script src = "leaflet-choropleth-gh-pages/dist/choropleth.js"></script>
-	  <script src = "WalkIndex.js"> </script> 
+	  <script src = "walkindex.js"> </script> 
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        color: #323232;
-      }
+     <!-- adding style elements to the html, body map and headers -->
+      html, body, #map {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;}
+ 
+	       h1,h2 {text-align: center;
+       margin: 0px;
+		   
+       }
+    
     </style>
   </head>
 
   <body>
-
+ <h1>Walkability Scores in Central Tennessee</h1>
+	  <h2>Note that the color on the choropleth map is associated with the range in Walkability scores in this region, and is not indicitive of the entire United States</h2>
 	  <div id="map"></div>
 
     <script>
@@ -48,6 +51,7 @@
  
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
+	 
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -105,13 +109,13 @@ function error(err) {
 }
 L.choropleth(walkindex, {
 	valueProperty: 'WalkIndex', // which property in the features to use
-	scale: ['red', 'white', 'green'], // chroma.js scale - include as many as you like
+	scale: ['white', 'green'], // chroma.js scale - include as many as you like
 	steps: 5, // number of breaks or steps in range
 	mode: 'q', // q for quantile, e for equidistant, k for k-means
 	style: {
 		color: '#fff', 
-		weight: 2,
-		fillOpacity: 0.8
+		 weight: 0.6,
+		fillOpacity: 0.3
 	},
 
        
