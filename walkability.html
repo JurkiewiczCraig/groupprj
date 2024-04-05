@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- Maps were inspired by https://www.youtube.com/watch?v=NyjMmNCtKf4&t=5s 
-and https://github.com/timwis/leaflet-choropleth -->
+
 	<head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    <title>Find Your Block's Walkability Score with Geolocation</title>
@@ -51,7 +50,7 @@ and https://github.com/timwis/leaflet-choropleth -->
  
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-	weight:2,
+	 
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -114,7 +113,7 @@ L.choropleth(walkindex, {
 	mode: 'q', // q for quantile, e for equidistant, k for k-means
 	style: {
 		color: '#fff', 
-		 weight: 0.1,
+		 weight: 0.6,
 		fillOpacity: 0.3
 	},
 
