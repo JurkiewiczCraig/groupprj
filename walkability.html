@@ -131,8 +131,7 @@ function getColor(d) {
               '#FFAA00';
                     
 }
-	    <!-- -->
-
+	    <!-- adding style to the feature NatWalkInd with the combined colors frmo the code above-->
 function style(feature) {
     return {
         fillColor: getColor(feature.properties.NatWalkInd),
@@ -146,7 +145,7 @@ function style(feature) {
 
 L.geoJson(WalkIndex, {style: style}).addTo(map);
 
-<!-- adding a legend to the map -->
+<!-- adding a legend to the map  with 4 intervels -->
   var legend = L.control({position: 'bottomright'});	    
 legend.onAdd = function (map) {
 
