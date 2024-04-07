@@ -125,14 +125,10 @@ function error(err) {
 
 
 function getColor(d) {
-    return d > 20 ? '#800026' :
-	   d > 17.5 ? '#800026' :
-           d > 15  ? '#BD0026' :
-           d > 12.5  ? '#E31A1C' :
-           d > 10  ? '#FC4E2A' :
-           d > 7.5   ? '#FD8D3C' :
-           d > 5   ? '#FEB24C' :
-           d > 2.5   ? '#FED976' :
+    return d > 20 ? '#38A800' :
+           d > 15.25  ? '#A3FF73' :
+           d > 10.5   ? '#FFFF73' :
+           d > 5.76   ? '#FFAA00' :
                       '#FFEDA0';
 }
   var legend = L.control({position: 'bottomright'});
