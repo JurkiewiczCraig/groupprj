@@ -125,34 +125,20 @@ function error(err) {
 
 
 function getColor(d) {
-    return d > 20 ? '#38A800' :
-           d > 15.25  ? '#A3FF73' :
-           d > 10.5   ? '#FFFF73' :
-           d > 5.76   ? '#FFAA00' :
-	      '#FFEDA0';
+    return d > 20 ? '#800026' :
+	   d > 17.5 ? '#800026' :
+           d > 15  ? '#BD0026' :
+           d > 12.5  ? '#E31A1C' :
+           d > 10  ? '#FC4E2A' :
+           d > 7.5   ? '#FD8D3C' :
+           d > 5   ? '#FEB24C' :
+           d > 2.5   ? '#FED976' :
+                      '#FFEDA0';
 }
   var legend = L.control({position: 'bottomright'});
 function style(feature) {
     return {
-        fillColor: getColor(feature.NatWalkInd),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
-
-L.geoJson(statesData, {style: style}).addTo(map);),
-        weight: 2,
-        opacity: 1,
-        color: 'white',
-        dashArray: '3',
-        fillOpacity: 0.7
-    };
-}
-
-L.geoJson(statesData, {style: style}).addTo(map);),
+        fillColor: getColor(feature.properties.WalkIndex),
         weight: 2,
         opacity: 1,
         color: 'white',
@@ -168,7 +154,7 @@ L.geoJson(WalkIndex, {style: style}).addTo(map);
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-    grades = [1, 5.75, 10.51, 15.25],
+    grades = [0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20],
     labels = [];
 
     // loop through our density intervals and generate a label with a colored square for each interval
