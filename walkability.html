@@ -15,11 +15,13 @@ and https://github.com/timwis/leaflet-choropleth -->
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
     <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
- <script src="TileLayer.Grayscale.js"></script>
+<!--adding in the greyscale tiles, the choropleth javascript data and the data from the walkability geojson file -->
+		<script src="TileLayer.Grayscale.js"></script>
     <script src = "leaflet-choropleth-gh-pages/dist/choropleth.js"></script>
 	  <script src = "walkindex.js"> </script> 
     <style>
-      body {
+     <!-- adding style to the map and headers -->
+	    body {
         margin: 0;
         padding: 0;
       }
@@ -47,9 +49,7 @@ and https://github.com/timwis/leaflet-choropleth -->
     
 
    
- 
-
- 
+ <--adding in the greyscale basemap -->
   const map = L.map('map', { fadeAnimation: false }).setView([25, -4], 3);
         L.tileLayer.grayscale('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
@@ -58,15 +58,14 @@ and https://github.com/timwis/leaflet-choropleth -->
     
 
 
-  
+  <!-- adding accuracy to the geolocator-->
 const options = {
     enableHighAccuracy: true, 
-   
     timeout: 5000, 
-
     maximumAge: 2000, 
     
 };
+	    <!-- Creating a marker and circle icon for the geolocator-->
 let marker, circle, zoomed;
   
 <!-- adding the navigator geolocator that calls the function everytime the users location updates-->
@@ -121,11 +120,9 @@ L.choropleth(WalkIndex, {
 		fillOpacity: 0.3
 	},
 
-       
+       <!--adding a pop up for the national walkability idnex scores, had to convert the format to a stirng in order to be viewed--> -->
      onEachFeature: function(feature, layer) {
-      
         const natWalkIndString = feature.properties.NatWalkInd.toString();
-    
         layer.bindPopup(natWalkIndString);
     }
 }).addTo(map);
