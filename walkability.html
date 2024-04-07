@@ -129,7 +129,13 @@ function getColor(d) {
            d > 15.25  ? '#A3FF73' :
            d > 10.5   ? '#FFFF73' :
            d > 5.76   ? '#FFAA00' :
-                   
+                   function getColor(d) {
+    return d > 20 ? '#38A800' :
+           d > 15.25  ? '#A3FF73' :
+           d > 10.5   ? '#FFFF73' :
+           d > 5.76   ? '#FFAA00' :
+                      '#FFEDA0';
+
 }
   var legend = L.control({position: 'bottomright'});
 function style(feature) {
@@ -150,7 +156,7 @@ L.geoJson(WalkIndex, {style: style}).addTo(map);
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-    grades = [1, 5.75, 10.51, 15.25, 20],
+    grades = [1, 5.75, 10.51, 15.25],
     labels = [];
 
     // loop through our density intervals and generate a label with a colored square for each interval
