@@ -38,7 +38,7 @@ and https://github.com/timwis/leaflet-choropleth -->
   </head>
 
   <body>
- <h1>Walkability Scores in Central Tennessee</h1>
+ <h1>Walkability Scores in New York City</h1>
 	  <h2>Note that the color on the choropleth map is associated with the range in Walkability scores in this region, and is not indicitive of the entire United States</h2>
 	  <div id="map"></div>
 
@@ -122,11 +122,13 @@ L.choropleth(WalkIndex, {
 	},
 
        
-      onEachFeature: function(feature, layer) {
-		layer.bindPopup(feature.properties.Score)
-	}
-}).addTo(map)
-
+     onEachFeature: function(feature, layer) {
+      
+        const natWalkIndString = feature.properties.NatWalkInd.toString();
+    
+        layer.bindPopup(natWalkIndString);
+    }
+}).addTo(map);
 
   
 
