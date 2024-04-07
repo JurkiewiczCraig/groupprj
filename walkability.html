@@ -113,7 +113,7 @@ if (!zoomed) {
 }
 
 function error(err) {
-<!-- altering the user if they do not allow geolocatoion access or if there is a user error -->
+<!-- asking the user if they do not allow geolocatoion access or if there is a user error -->
     if (err.code === 1) {
         alert("Please allow geolocation access");
     } else {
@@ -122,7 +122,7 @@ function error(err) {
 }
 
 
-
+<!--adding color to the feature layer based off of a field  that will be set below -->
 function getColor(d) {
     return d >= 20 ? '#38A800' :
 	   d > 15.52 ? '#38A800' :
@@ -131,6 +131,7 @@ function getColor(d) {
               '#FFAA00';
                     
 }
+	    
   var legend = L.control({position: 'bottomright'});
 function style(feature) {
     return {
