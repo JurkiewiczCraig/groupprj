@@ -131,8 +131,8 @@ function getColor(d) {
               '#FFAA00';
                     
 }
-	    
-  var legend = L.control({position: 'bottomright'});
+	    <!-- -->
+
 function style(feature) {
     return {
         fillColor: getColor(feature.properties.NatWalkInd),
@@ -146,15 +146,14 @@ function style(feature) {
 
 L.geoJson(WalkIndex, {style: style}).addTo(map);
 
-
-	    
+<!-- adding a legend to the map -->
+  var legend = L.control({position: 'bottomright'});	    
 legend.onAdd = function (map) {
 
     var div = L.DomUtil.create('div', 'info legend'),
     grades = [1, 5.75, 10.51,15.25],
     labels = [];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
