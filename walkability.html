@@ -134,7 +134,29 @@ function getColor(d) {
   var legend = L.control({position: 'bottomright'});
 function style(feature) {
     return {
-        fillColor: getColor(WalkIndex),
+        fillColor: getColor(function style(feature) {
+    return {
+        fillColor: getColor(function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.density),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+L.geoJson(statesData, {style: style}).addTo(map);),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+L.geoJson(statesData, {style: style}).addTo(map);),
         weight: 2,
         opacity: 1,
         color: 'white',
