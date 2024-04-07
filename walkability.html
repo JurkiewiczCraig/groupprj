@@ -135,7 +135,7 @@ function getColor(d) {
   var legend = L.control({position: 'bottomright'});
 function style(feature) {
     return {
-        fillColor: getColor(feature.NatWalkInd),
+        fillColor: getColor(feature.properties.NatWalkInd),
         weight: 2,
         opacity: 1,
         color: 'white',
