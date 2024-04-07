@@ -15,7 +15,7 @@ and https://github.com/timwis/leaflet-choropleth -->
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.10/dist/esri-leaflet.js"></script>
     <script src="https://unpkg.com/esri-leaflet-vector@4.2.3/dist/esri-leaflet-vector.js"></script>
- 
+ <script src="TileLayer.Grayscale.js"></script>
     <script src = "leaflet-choropleth-gh-pages/dist/choropleth.js"></script>
 	  <script src = "walkindex.js"> </script> 
     <style>
@@ -52,11 +52,12 @@ and https://github.com/timwis/leaflet-choropleth -->
  
 
  
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-	 
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+  var map = L.map('map', { fadeAnimation: false }).setView([25, -4], 3);
+        L.tileLayer.grayscale('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org/">OpenStreetMap</a> contributors',
+            maxZoom: 14, minZoom: 2
+        }).addTo(map);
+    }
 
 
   
