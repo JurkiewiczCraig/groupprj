@@ -50,7 +50,6 @@ and https://leafletjs.com/examples/choropleth/ -->
 	
 }
 
-	    <!-- adding style to the info box and the h4 within the infobox -->
 .info {
     padding: 6px 8px;
     font: 14px/16px Arial, Helvetica, sans-serif;
@@ -178,10 +177,11 @@ function resetHighlight(e) {
     geojson.resetStyle(e.target);
 	 info.update();
 }
-
+<!--adding a function that zooms to each feature when clicked o -->
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
+	    <!-- function for click listener-->
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
