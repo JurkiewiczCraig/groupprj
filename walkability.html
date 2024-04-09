@@ -176,6 +176,7 @@ function highlightFeature(e) {
 
 function resetHighlight(e) {
     geojson.resetStyle(e.target);
+	 info.update();
 }
 
 function zoomToFeature(e) {
@@ -186,6 +187,7 @@ function onEachFeature(feature, layer) {
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: zoomToFeature
+	      info.update(layer.feature.properties);
     });
 }
 
