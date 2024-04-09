@@ -186,7 +186,7 @@ function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature;
+        click: zoomToFeature,
 	info.update(layer.feature.properties);
     });
 }
