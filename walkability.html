@@ -172,6 +172,7 @@ function highlightFeature(e) {
     });
 
     layer.bringToFront();
+	info.update(layer.feature.properties);
 }
 
 function resetHighlight(e) {
@@ -186,8 +187,8 @@ function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature,
-	info.update(layer.feature.properties);
+        click: zoomToFeature
+
     });
 }
 
