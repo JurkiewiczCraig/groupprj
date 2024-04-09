@@ -144,6 +144,9 @@ function getColor(d) {
               '#FFAA00';
                     
 }
+
+
+	
 	    <!-- adding style to the feature NatWalkInd with the combined colors frmo the code above-->
 function style(feature) {
     return {
@@ -158,6 +161,39 @@ function style(feature) {
 
 L.geoJson(WalkIndex, {style: style}).addTo(map);
 
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    layer.bringToFront();
+}
+
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+}
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+geojson = L.geoJson(WalkIndex, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(map);
+	    
 <!-- adding a legend to the map  with 4 intervels -->
   var legend = L.control({position: 'bottomright'});	    
 legend.onAdd = function (map) {
