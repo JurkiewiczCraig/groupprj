@@ -68,13 +68,11 @@ and https://leafletjs.com/examples/choropleth/ -->
   </head>
 
   <body>
-
+<!--adding the div container that holds the map -->
  	  <div id="map"></div>
  
     <script>
   
-    
-
    
  <!--adding in the greyscale basemap -->
   const map = L.map('map', { fadeAnimation: false }).setView([25, -4], 3);
@@ -126,10 +124,9 @@ if (!zoomed) {
     
 
 }
-
-function error(err) {
 <!-- asking the user if they do not allow geolocatoion access or if there is a user error -->
-    if (err.code === 1) {
+function error(err) {
+     if (err.code === 1) {
         alert("Please allow geolocation access");
     } else {
         alert("Cannot get current location");
@@ -160,9 +157,9 @@ function style(feature) {
         fillOpacity: 0.7
     };
 }
-
-L.geoJson(WalkIndex, {style: style}).addTo(map);
-
+ L.geoJson(WalkIndex, {style: style}).addTo(map);
+ 
+	    <!--adding a function for the layer to highlight when the mouse hobers over it with style included -->
 function highlightFeature(e) {
     var layer = e.target;
 
@@ -176,7 +173,7 @@ function highlightFeature(e) {
     layer.bringToFront();
 	info.update(layer.feature.properties);
 }
-
+<!-- reseting the style of the layer along with the information displayed on the infobox when the user moves the mouse over-->
 function resetHighlight(e) {
     geojson.resetStyle(e.target);
 	 info.update();
