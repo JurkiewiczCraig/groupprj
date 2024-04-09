@@ -181,7 +181,7 @@ function resetHighlight(e) {
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
 }
-	    <!-- function for click listener-->
+	    <!-- function for the click listeners to highlight feature, reset feature and zoom to feature when hovered over or clicked-->
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
@@ -204,8 +204,7 @@ info.onAdd = function (map) {
     this.update();
     return this._div;
 };
-
-// method that we will use to update the control based on feature properties passed
+<!-- updating the infobox with the walkability index whenever the mouse hovers over the area-->
 info.update = function (props) {
     this._div.innerHTML = '<h4>US Walkability Index of Each Census Block</h4>' +  (props ?
           '<b>' +'This Cenus block has a Walkability Factor of ' +'<br />' + props.NatWalkInd.toFixed(2) + ' Out of 20'
